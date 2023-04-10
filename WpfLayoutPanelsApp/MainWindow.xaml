@@ -1,0 +1,73 @@
+﻿<Window x:Class="WpfLayoutPanelsApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLayoutPanelsApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0"
+                    Orientation="Horizontal"
+                    Width="200">
+            <Button Content="Button 1" 
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"/>
+            <Button Content="Button 2" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Height="50"/>
+            <Button Content="Button 3" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Top"
+                    Height="50"/>
+            <Button Content="Button 4" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"
+                    />
+        </StackPanel>
+        <WrapPanel Grid.Row="0"
+                   Grid.Column="1"
+                   Orientation="Horizontal"
+                   >
+            <Button Content="Button 1" Margin="5 10 15 20" />
+            <Button Content="Button 2" Padding="0" />
+            <Button Content="Button 3" />
+            <Button Content="Button 4" />
+            <Button Content="Button 5" />
+        </WrapPanel>
+        <DockPanel Grid.Row="1"
+                   Grid.Column="0"
+                   LastChildFill="False">
+            <Button DockPanel.Dock="Top"
+                Content="Button 1"/>
+            <Button DockPanel.Dock="Left"
+                Content="Button 2"/>
+            <Button DockPanel.Dock="Bottom"
+                Content="Button 3"/>
+            <Button DockPanel.Dock="Right"
+                Content="Button 4"/>
+            
+        </DockPanel>
+        <Canvas Grid.Row="1"
+                Grid.Column="1">
+            <Button Canvas.Top="50"
+                    Canvas.Left="70"
+                    Content="Button 1"/>
+            <Button Canvas.Bottom="50"
+                    Canvas.Right="70"
+                    Content="Button 2"/>
+        </Canvas>
+    </Grid>
+    
+</Window>
